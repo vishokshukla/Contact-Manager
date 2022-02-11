@@ -45,17 +45,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${listContact }" var="contact">
+				<c:forEach items="${listContact }" var="contact" varStatus="status">
 					<tr>
-						<th scope="row">${contact.id }</th>
+						<th scope="row">${status.index + 1 }</th>
 						<td>${contact.name }</td>
 						<td>${contact.email }</td>
 						<td>${contact.address }</td>
 						<td>${contact.phone }</td>
 						<td>
 							<div>
-							<a class="btn btn-warning" href="#" role="button">Edit</a>
-							<a class="btn btn-danger" href="#" role="button">Delete</a>
+							<a class="btn btn-warning" href="edit?id=${contact.id }" role="button">Edit</a>
+							
+							<a class="btn btn-danger" href="delete?id=${contact.id }" role="button">Delete</a>
 							</div>
 						</td>
 					</tr>

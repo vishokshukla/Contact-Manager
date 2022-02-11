@@ -2,13 +2,13 @@ package com.contact.model;
 
 public class Contact {
 	
-	private int id;
+	private Integer id;
 	private String name;
 	private String email;
 	private String address;
 	private String phone;
 	
-	public Contact(int id, String name, String email, String address, String phone) {
+	public Contact(Integer id, String name, String email, String address, String phone) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -27,11 +27,11 @@ public class Contact {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

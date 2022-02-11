@@ -6,13 +6,13 @@ import com.contact.model.Contact;
 
 public interface ContactDAO {
 	
-	public int save(Contact contact);
+	public Integer save(Contact contact);
 	
-	public int update(Contact contact);
+	public Integer update(Contact contact);
 	
-	public Contact getContact(int id);
+	public Contact getContact(Integer id);
 	
-	public int delete(int id);
+	public Integer delete(Integer id);
 	
 	public List<Contact> listContact();
 

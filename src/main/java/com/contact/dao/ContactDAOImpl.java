@@ -22,21 +22,21 @@ public class ContactDAOImpl implements ContactDAO {
 	}
 	
 	@Override
-	public int save(Contact contact) {
+	public Integer save(Contact contact) {
 		// TODO Auto-generated method stub
 		String sql = "insert into contact (name, email, address, phone) values (?,?,?,?)";
 		return jdbcTemplate.update(sql, contact.getName(), contact.getEmail(), contact.getAddress(), contact.getPhone());
 	}
 
 	@Override
-	public int update(Contact contact) {
+	public Integer update(Contact contact) {
 		// TODO Auto-generated method stub
 		String sql = "update contact set name=?, email=?, address=?, phone=? where contact_id=?";
 		return jdbcTemplate.update(sql,contact.getName(), contact.getEmail(), contact.getAddress(), contact.getPhone(), contact.getId());
 	}
 
 	@Override
-	public Contact getContact(int id) {
+	public Contact getContact(Integer id) {
 		// TODO Auto-generated method stub
 		String sql = "select * from contact where contact_id="+id;
 		
@@ -59,7 +59,7 @@ public class ContactDAOImpl implements ContactDAO {
 	}
 
 	@Override
-	public int delete(int id) {
+	public Integer delete(Integer id) {
 		String sql = "delete from contact where contact_id="+id;
 		return jdbcTemplate.update(sql);
 	}
@@ -71,7 +71,7 @@ public class ContactDAOImpl implements ContactDAO {
 
 			@Override
 			public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
-				int id = rs.getInt("contact_id");
+				Integer id = rs.getInt("contact_id");
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String address = rs.getString("address");
